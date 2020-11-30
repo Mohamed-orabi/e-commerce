@@ -27,11 +27,11 @@ namespace API.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult<CustomerBasket>> UpdateBasket(CustomerBasketDto basket)
+        public async Task<ActionResult<CustomerBasket>> UpdateBasket(CustomerBasket basket)
         {
-            var CustomerBasket = _mapper.Map<CustomerBasketDto,CustomerBasket>(basket);
+            // var CustomerBasket = _mapper.Map<CustomerBasketDto,CustomerBasket>(basket);
 
-            var updateBasket = await _basketRepository.UpdateBasketAsync(CustomerBasket);
+            var updateBasket = await _basketRepository.UpdateBasketAsync(basket);
 
             return Ok(updateBasket);
         }
